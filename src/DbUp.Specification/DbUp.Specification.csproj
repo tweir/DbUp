@@ -31,6 +31,10 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\lib\MySql.Data.6.5.4\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\..\lib\NSubstitute.1.1.0.0\lib\35\NSubstitute.dll</HintPath>
     </Reference>
@@ -63,6 +67,7 @@
     <Compile Include="Contexts\GivenAnUptoDateDatabase.cs" />
     <Compile Include="Contexts\GivenScriptsWithVariableSubstitutions.cs" />
     <Compile Include="EmbeddedScriptAndCodeProviderTests.cs" />
+    <Compile Include="MySqlSupportTests.cs" />
     <Compile Include="SqlScriptExecutorTests.cs" />
     <Compile Include="UpgradeEngineTests.cs" />
     <Compile Include="FileSystemScriptProviderTests.cs" />
@@ -72,6 +77,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\DbUp.MySQL\DbUp.MySQL.csproj">
+      <Project>{19BD701A-741D-4B41-9657-BBE912DF6C43}</Project>
+      <Name>DbUp.MySQL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DbUp.SqlCe\DbUp.SqlCe.csproj">
       <Project>{E7EDAFD6-1DD3-4D85-806A-20340032D2A9}</Project>
       <Name>DbUp.SqlCe</Name>
